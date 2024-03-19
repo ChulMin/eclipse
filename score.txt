@@ -1,0 +1,89 @@
+package Test1번;
+
+import java.util.Scanner;
+
+public class TEST {
+	static Scanner sc = new Scanner(System.in);
+	static int num;
+	static String name;
+	static int ko;
+	static int en;
+	static int ma;
+	static void input() {
+		System.out.print("번호를 입력합니다: ");
+		num = sc.nextInt();
+		System.out.print("이름을 입력합니다: ");
+		name = sc.next();
+		System.out.print("국어를 입력합니다: ");
+		ko = sc.nextInt();
+		System.out.print("영어를 입력합니다: ");
+		en = sc.nextInt();
+		System.out.print("수학을 입력합니다: ");
+		ma = sc.nextInt();
+	}
+	
+	public static void main(String[] args) {
+		int count =0;
+		
+		int[] numar = new int[100]; 
+		String[] namear = new String[100];
+		int[][] score = new int[100][4];
+		double[] scoreavg = new double[100];
+		int[] rank = new int[100]; 
+		
+		boolean stop = true;
+		while(stop) {
+		int sum = 0;
+		double avg = 0;
+		input();
+		numar[count]=num;
+		namear[count]=name;
+		score[count][0]=ko;
+		score[count][1]=en;
+		score[count][2]=ma;
+		sum=ko+en+ma;
+		avg=(double)sum/3;
+		score[count][3]=sum;
+		scoreavg[count]=avg;
+		count++;
+		loop:while(true) { 
+			System.out.print("계속하시겠습니까?(네/아니오)");
+			String str = sc.next();
+			if(str.equals("네")) {
+			break;
+			}
+			else if(str.equals("아니오")) {
+			System.out.println("점수 조회를 종료하였습니다.");
+			for(int i = 0;i<count;i++) {
+				rank[i]=1;
+			}
+			for(int i = 0;i<count;i++) {
+				for(int j = 0;j<count;j++) {
+					if(score[i][3] < score[j][3]){
+						rank[i]++;
+					}
+				}
+			}
+			System.out.println("-----------------------------------------------------------------");
+			System.out.println("				성	적	표		 	 ");
+			System.out.println("번호  	이름	국어	영어	수학	총점	평균	석차");
+			for(int i = 0;i<count;i++) {
+					
+				System.out.printf("%d\t%s\t%d\t%d\t%d\t%d\t%.2f\t%d\n",numar[i],namear[i],score[i][0],score[i][1],score[i][2],score[i][3],scoreavg[i],rank[i]);
+				
+			}
+			System.out.println("-----------------------------------------------------------------");
+			System.exit(0);
+			}
+			else {
+			System.out.println("잘못입력하셨습니다.");
+			continue loop ;
+
+			}
+
+			} 
+		
+		}
+		
+	}
+}
