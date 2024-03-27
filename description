@@ -1,0 +1,39 @@
+Connection Pool을 이용한 회원관리 시스템 개발 프로젝트
+- 커넥션 풀: http://commons.apache.org
+commons-collection4.jar
+commons-dbcp2.jar
+commons-pool2.jar
+
+-사전에 연결을 준비하고 있다가 = (커넥션 풀) 연결이 들어오면 순서대로 시간을 
+소비하지 않고, 연결하여 줍니다.
+프로그램의 효율성과 서버의 성능이 전체적으로 증가 합니다.
+
+<!-- jsp파일 기본양식은 (HTML5 기본양식 + <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>)이다.  -->
+
+colspan => 행을 합친다. 예) <td colspan = "2">
+rowspan => 열을 합친다. 예) <td rowspan = "2">
+
+
+post
+-------
+http://localhost:8500/ConnectionPool_member/loginForm.jsp
+http://localhost:8500/ConnectionPool_member/loginProcess.jsp
+
+get
+------
+http://localhost:8500/Conn
+
+
+
+			페이지 설계
+			
+1. loginForm.jsp :  로그인 폼 페이지(로그인 정보 입력 페이지)
+2. loginProcess.jsp : 로그인을 실제로 처리하는 페이지
+3. joinForm.jsp : 회원가입 폼 페이지
+4. joinProcess.jsp : 회원가입을 실제로 처리하는 페이지
+5. loginmain.jsp : 로그인하면 보여질 메인 페이지
+6. member_list.jsp : 회원 목록을 확인하는 페이지
+7. member_info.jsp : 회원 정보를 확인하는 페이지
+8. member_update.jsp : 회원 정보 수정을 처리하는 페이지
+9. member_delete.jsp : 회원 삭제를 처리하는 페이지
+10.logout: 로그아웃 페이지  
