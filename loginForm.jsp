@@ -22,8 +22,9 @@
 			</tr>
 			<tr>
 				<td colspan ="2" align ="center">
-					<button onclick= "javascript:loginform.submit()">로그인</button>&nbsp;&nbsp;&nbsp;&nbsp;
-					<button onclick= "javascript:'joinForm.jsp'">회원가입</button>
+					<input type = "submit" value ="로그인">&nbsp;&nbsp;
+					<input type = "reset" value ="새로고침">&nbsp;&nbsp;
+					<input type = "button" value ="회원가입" onclick="location.href='joinForm.jsp'">
 				</td>
 			</tr>
 		</table>

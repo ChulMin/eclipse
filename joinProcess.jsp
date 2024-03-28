@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>loginProcess.jsp</title>
+<title>joinProcess.jsp</title>
 </head>
 <body>
 <%
@@ -19,29 +19,37 @@
 
 	String id = request.getParameter("id");
 	String pass = request.getParameter("pass");
+	String name = request.getParameter("name");
+	String age = request.getParameter("age");
+	String gender = request.getParameter("gender");
+	String email = request.getParameter("email");
+	
 
 	try{
-	pstmt = conn.prepareStatement("select * from membership where id = ?");
+	pstmt = conn.prepareStatement("insert into membership values(?,?,?,?,?,?)");
 	pstmt.setString(1, id);
+	pstmt.setString(2, pass);
+	pstmt.setString(3, name);
+	pstmt.setString(4, age);
+	pstmt.setString(5, gender);
+	pstmt.setString(6, email);
+	int result = pstmt.executeUpdate();
 	
-	rs = pstmt.executeQuery();
-	
-	if(rs.next()){
-		if(pass.equals(rs.getString("password"))){
+	// 회원가입이 성공했을때 
+	if(result !=0){
 			session.setAttribute("id", id);//session.setAttribute(필드명, 필드의 튜플값);
 			// 서블릿 : java 컴파일러가 내부에서 임의로(자동) 생성해준다.
 			
 			
 			out.println("<script>");
-			out.println("location.href = 'loginmain.jsp'");//location.href = '페이지파일명.jsp'
+			out.println("location.href = 'loginForm.jsp'");//location.href = '페이지파일명.jsp'
 			out.println("</script>");
 		}
 		else{
 			out.println("<script>");
-			out.println("location.href = 'loginForm.jsp'");
+			out.println("location.href = 'joinForm.jsp'");
 			out.println("</script>");
 		}
-	}
 	}catch(Exception e){
 		e.printStackTrace();
 	}
