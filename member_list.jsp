@@ -31,26 +31,26 @@ try {
 		<tr align="center">
 			<td colspan="4">회원 목록</td>
 		</tr>
-		<%
-			while (rs.next()) {
-		%>
+		<%while (rs.next()) {%>
 			<tr align="center">
 				<td> <%=rs.getString("id") %></td>
 				<td><a href="member_updateForm.jsp?id=<%=rs.getString("id")%>">수정</a></td>
 				<td>
-					<%	
-						if(rs.getString("id").equals("admin")){
-					%>관리자<%
+					<%if(rs.getString("id").equals("admin")){%>관리자<%
 						}else{
-						%> <a href="member_delete.jsp?id=<%=rs.getString("id")%>">삭제</a><% } %>
+						%> <a href="member_deleteProcess.jsp?id=<%=rs.getString("id")%>">삭제</a>
+						<% } %>
 				</td>
 				<td>
 					<a href="member_info.jsp?id=<%=rs.getString("id")%>">회원정보보기</a>
+					
 				</td>
 			</tr>
-			<% } %>
+		<% } %>
 	</table>
-
-
+	<p align ="center">
+		<button onclick="location.href = 'loginForm.jsp'">되돌아가기</button>
+		<button onclick="location.href = 'member_logout.jsp'">로그아웃</button>
+	</p>
 </body>
 </html>
