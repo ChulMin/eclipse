@@ -7,7 +7,7 @@
 <title>회원관리 시스템 로그인 페이지</title>
 </head>
 <body>
-	<form name = "loginform" action = "loginProcess.jsp" method = "post">
+	<form name = "loginform" action = "./Process/loginProcess.jsp" method = "post">
 		<table border = "1" align="center">
 			<tr>
 				<td colspan = "3" align="center"><b><font size="5"></font>로그인 페이지</b></td>
