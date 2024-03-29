@@ -34,7 +34,6 @@
 <title>회원 목록 화면</title>
 </head>
 <body>
-
 	<table border="1" width ="400" align="center">
 		<tr align="center">
 			<td colspan="6" align="center"><b><font size="5"></font>회원정보</b></td>
@@ -64,13 +63,14 @@
 			<td><%=rs.getString("gender")%></td>
 		</tr>
 		<tr>
-			<td align="left">이메일</td>
+			<td align="center">이메일</td>
 			<td><%=rs.getString("email")%></td>
 		</tr>
 	</table>
 	<p align ="center">
 		<button onclick = "location.href='member_list.jsp'">회원목록보기</button>
 		<button onclick="location.href = 'loginForm.jsp'">되돌아가기</button>
+		<button onclick="location.href = 'member_logout.jsp'">로그아웃</button>
 	</p>
 </body>
 </html>
