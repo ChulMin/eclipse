@@ -27,5 +27,6 @@
 	}
 %>
 <button onclick="location.href = 'loginForm.jsp'">되돌아가기</button>
+<button onclick="location.href = 'member_logout.jsp'">로그아웃</button>
 </body>
 </html>
