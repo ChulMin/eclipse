@@ -7,7 +7,7 @@
 <title>회원가입 화면</title>
 </head>
 <body>
-	<form name = "joinform" action = "joinProcess.jsp" method = "post" align="center">
+	<form name = "joinform" action = "./Process/joinProcess.jsp" method = "post" align="center">
 		<table border = "5" align="center">
 			<tr>
 				<td colspan = "2" align="center"><b><font size="5"></font>회원가입 페이지</b></td>
