@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+	h1 {
+		color:aqua;
+		border-width: thick;
+		border-color: blue;
+		border-style: solid;
+	}
+
+	h2 {
+		font-size: 20px;
+		border:5px solid mediumpurple;
+		color: yellow;
+	}
+	
+	h3 {
+		color: deeppink;
+		border-width: 20px;
+		border-color: aquamarine;
+		border-style: groove;	
+	}
+
+	p {
+		color: red;	
+		text-align: right;
+	}
+	
+	dl {
+		line-height: 50px;
+		color: darkgrey;	
+		background-color: white;
+	}
+	
+	.radius1 {
+		border-radius: 5px;
+		border: 8px groove;	
+	}
+	
+	.radius2 {
+		border-radius: 10px;
+		border: 3px solid;	
+	}
+	
+	.radius3 {
+		border-radius: 20px;
+		border: 6px dashed;	
+	}
+	
+	.direction1 {
+		direction:ltr;
+		font-size: 20px;
+		font-style: normal;
+		text-decoration: underline;/*글자아래에 선을 긋는다*/
+		color: indigo;
+		text-align: left;
+	}
+	
+	.direction2 {
+		direction:rtl;
+		font-size: 30px;
+		font-style: italic;
+		text-decoration: overline;/*글자위에 선을 긋는다*/
+		color: orange;
+		text-align: right;
+	}
+	
+	.direction3 {
+		font-size: 20px;
+		font-style: oblique;
+		text-decoration: line-through;/*글자사이에 선을 긋는다*/
+		color: greenyellow; 
+		text-align: justify;
+	}
+	
+	
+	body {
+		color: green;
+		border-width: 10px;		
+		border-color: red;
+		border-style: solid;
+ 		 background-color: lightblue;
+		}	
+
