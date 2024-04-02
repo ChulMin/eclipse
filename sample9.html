@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>HTML5 문서 구조 시맨틱 태그 사용</title>
+	<style>
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+		}
+
+		.header {
+			width: 100%;
+			height: 15%;
+			background: yellow;
+		}
+
+		.nav {
+			width: 15%;
+			height: 70%;
+			float: left;
+			background: orange;
+		}
+
+		.section {
+			width: 70%;
+			height: 70%;
+			float: left;
+			background: olivedrab;
+		}
+
+		.aside {
+			width: 15%;
+			height: 70%;
+			float: left;
+			background: orange;
+		}
+
+		.footer {
+			width: 100%;
+			height: 15%;
+			clear: both;
+			background: plum;
+		}
+	</style>
+</head>
+
+<body>
+	<header class="header">header</header>
+	<nav class="nav">nav</nav>
+	<section class="section">section</section>
+	<aside class="aside">aside</aside>
+	<footer class="footer">footer</footer>
+	<ul>
+		<li><a href="#photo1">코알라</a></li>
+		<li><a href="#photo2">바나나</a></li>
+		<li><a href="#photo3">사과</a></li>
+	</ul>
+
+	<h2><a id="photo1">코알라</a></h2>
+	호주 동부에 서식하는 유대하강, 캥거루목에 속하는 동물.
+
+	생김새가 곰처럼 생겼기 때문에 토종곰, 즉 네이티브 베어(Native Bear)라고 부르기도 하며,<br>
+	과거에는 나무곰(Tree Bear)이나 원숭이곰(Monkey Bear)이라는 명칭도 있었다. 주머니곰,<br>
+	나무타기주머니곰 등으로도 불린다지만 생활사 등 여러 면에서는 오히려 나무늘보와 가깝다고 볼 수 있다.<br>
+	굳이 곰을 꼽자면 생활사가 매우 유사한 판다일 것이다. 한마디로 유대류 버전 나무늘보인 셈.<br>
+	애초에 호주의 유대류 중에는 곰에 상응하는 종이 없다. 유대류의 다양성을 생각해 보면 이상한 일.<br>
+	생물학적으로 가장 가까운 동물은 웜뱃이라고 한다. 단 웜뱃과는 약 4000만 년 전에 공통조상에서 분리하였다.<br>
+	<p></p>
+	북실북실하고 보드라운 털과 둥글둥글한 생김새 때문에 인기가 많아 살아 있는 테디베어라고도 불리며,<br>
+	실제로 코알라의 외모도 아기곰의 얼굴과 인간 아기나 원숭이의 몸통을 합친 듯한 외관 때문에 귀여운 동물이라는 평이 많다.<br>
+	유칼립투스 나무에 매달린 코알라 어미와 등에 업힌 새끼의 모습은 호주를 상징하는 모습 중 하나로 호주 홍보에서도 코알라는 캥거루와 함께 필수요소다.<br>
+	그래서인지 상품화가 아주 잘 된 동물 중 하나이다.
+	<table border="1px">
+		<tbody>
+			<tr>
+				<th>
+					<img src="./images/koala.PNG" alt="코알라이미지" width="500" height="315">
+				</th>
+				<th>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/y0e0Ndake3c?si=OYoaEyEDnB4P9uby"
+						title="YouTube video player" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+					</iframe>
+				</th>
+			</tr>
+		</tbody>
+	</table>
+	<h2><a id="photo2">바나나</a></h2>
+
+	다년생이지만 한 번 수확한 개체는 상품성 있는 큰 바나나가 열리지 않아서 경제성이 떨어지므로 대부분 수확 직후 줄기는 베어낸다.<br>
+	그리고 땅 속에 있는 알줄기(球根)에서 죽순처럼 돋아 있는 '흡아(吸芽, Sucker)'를 떼어다가 땅에 심어서 연중 재배를 이어간다.<br>
+	<p></p>
+	따라서 열대 재배지에서는 따로 바나나를 수확하는 시기가 없다.<br>
+	비슷한 것으로 대나무가 있다. 이 쪽이 높이는 더 높지만, 부피나 잎의 크기, 열매 크기에서 바나나에 밀린다.<br>
+	다만 육상의 한 개체 한정이고, 죽순이 솟아나는 지하의 연결된 땅속줄기를 더하여 군집을 한 개체로 친다면 이쪽이 최대 크기의 초본 식물이 된다.<br>
+	숲 전체가 달랑 한 개체 만으로 이뤄진 경우도 많다. 즉 대나무와 야자수처럼 이름과 실제가 다른 것이다.<br>
+	다년초라 열매인 바나나를 채취하고 난 후에도 계속 자라긴 하지만, 바나나 풀의 줄기를 잘라줘야 다시 성장하는 데 더 도움이 되므로 매년 자르고 다시 키운다.<br>
+	아마 열대지방에서 멀리 떨어진 내륙지역에 사는 사람들에게 바나나는 그들이 알고 있는 열대과일 중에서도 제일 익숙한 과일일 것이다.
+	<p></p>
+	바나나를 나무에서 열리는 것처럼 묘사하는 문장이나 삽화가 많지만, 바나나는 사실 목본식물이 아니라 여러해살이인 초본식물이다.<br>
+	크기로 짐작할 수 있듯이 세계 최대의 초본식물 중 하나로 기둥 부분 및 줄기는 나무와 비슷해 보이지만 사실 잎과 비슷한 구조물이<br>
+	물고기의 비늘처럼 여러 겹으로 층층이 겹친 형태라 나무 줄기와는 다르다. 그래서 이를 '의사줄기'또는 '헛줄기'라고 부른다.
+	<p></p>
+	열매로서의 바나나는 일반적으로 과일로 분류된다. 바나나가 초본, 즉 나무가 아니라 풀의 열매인 점을 들어 채소라는 주장이 있는데<br>
+	엄밀히 따지면 이게 맞는 말이나 한국어에서 '과일'이라 함은 '나무나 초본(草)에 열리는, 사람이 먹을 수 있는 열매'를 가리키므로 과일이라 칭해도 무방하다.<br>
+	그러나 이 정의를 따를 경우 고추나 오이 등도, 모두 과일로 분류되는 모순이 생긴다. 보통 열매채소는 과채로 불린다.<br>
+	식물학적으로는 씨방 혹은 연관된 기관이 발달한 열매를 가리키며 식용 불가능한 것도 포함되므로 범위가 더 넓다.<br>
+	식물학적으로도 바나나는 과일이며, 과일의 분류인 이과, 핵과, 장과, 취과, 은화과, 견과, 삭과 (등) 중에서는 장과에 속한다.<br>
+	농업용어사전에서도 과일은 '종자식물의 꽃이 정받이를 한 후, 자방이 자라서 익은 것.<br>
+	과일이라 함은 과실 중에서 식용할 수 있는 것'이라 하여 초본을 배제하지는 않는다.<br>
+	과일인지 채소인지의 여부는 사회·문화·관습적 구분이며, 대한민국의 경우 관세법, 부가가치세법시행규칙, 국어사전에서 바나나를 과일로 분류했다.<br>
+	미국 농무부에서 바나나를 식용 열매(edible fruit)로 분류하였고, 유엔 식량 농업 기구(FAO)에서도 열매(fruit)로<br>
+	분류했으니 미국에선 바나나를 과일로 분류한다고 주장하기도 하는데 애초에 fruit은 과일이 아니라 열매라는 뜻이다.
+	<table border="1px">
+		<tbody>
+			<tr>
+				<th>
+					<img src="./images/banana.PNG" alt="바나나이미지" width="500" height="315">
+				</th>
+				<th>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/lIue9EjNs8E?si=e7E7XbHyhg0PvGFq"
+						title="YouTube video player" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+					</iframe>
+				</th>
+			</tr>
+		</tbody>
+	</table>
+	<h2><a id="photo3">사과</a></h2>
+
+	과일의 하나이다. 과육은 기본적으로 노란색에서 연두색[2]이며, 맛은 품종마다 다르다.<br>
+	<p></p>
+	일반적으로 한국에서 말하는 사과 맛은 달콤새콤 + 아삭아삭하게 씹히는 탄력이 있고 단단한 과육의 식감을 말한다.<br>
+	종마다 다르지만 잘 익은 사과는 껍질이 벗겨지지 않은 상태에서도 청량감이 있는 좋은 냄새가 난다.<br>
+	<p></p>
+	너무 오래 두면 수분과 펙틱화합물(pectic compounds)이 감소하면서 과실의 경도가 낮아져 모래처럼 푸석푸석 해지는데, '사과(沙果, 모래열매)'라는 이름은 여기에서 유래한다.<br>
+	<p></p>
+	나이드신 기성세대 일부는 간혹 사과를 두고 능금이라 부르기도 한다. 능금은 Malus asiatica를 말하기 때문에 사과의 근연종일 뿐 서로 다른 종이라 구별해야 한다.<br>
+	그러나, 능금 농사 풍년을 기원드린다고 쓰는 어른들이 간간히 있다.
+	<table border="1px">
+		<tbody>
+			<tr>
+				<th>
+					<img src="./images/apple.PNG" alt="사과이미지" width="500" height="315">
+				</th>
+				<th>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/-ojXpdPSHiA?si=DHonwK9qg4fSSxda"
+						title="YouTube video player" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+					</iframe>
+				</th>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+
+</html>
