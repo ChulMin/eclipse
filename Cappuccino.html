@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+		#menubar {
+			background: olive;
+		}
+
+		#menubar ul {
+			/* 여백과 패딩 모두 0 */
+			margin: 0;
+			padding: 0;
+			width: 567px;
+			/* 모든 아이템(<li>)을 한 줄에 품을 수 있는 폭 */
+		}
+
+		#menubar ul li {
+			display: inline-block;
+			/* 새 줄로 넘어가지 않게 */
+			list-style-type: none;
+			/* 마커 삭제 */
+			padding: 0px 15px;
+			/* top=bottom=0, left=right=15px */
+		}
+
+		#menubar ul li a {
+			color: white;
+			text-decoration: none;
+			/* 링크 보이지 않게 */
+		}
+
+		#menubar ul li a:hover {
+			color: violet;
+			/* 마우스 올라 갈 때 색 */
+		}
+
+		#main {
+			position: relative;
+			background-color: aliceblue;
+			z-index: -1;
+		}
+
+		.left {
+			background-color: aliceblue;
+			padding-left: 240px;
+			padding-right: 80px;
+			
+		}
+
+		#coffee {
+			width: 200px;
+			height: 200px;
+			float: left;
+			z-index: 1;
+			margin-top:16px;
+		}
+
+		body {
+			background-image: url('images/메가커피2.PNG');
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+		}
+		h3 a{
+			padding:5px;
+		}
+	</style>
+</head>
+<body>
+<nav id="menubar">
+<ul>
+<li><a href="Home.html">Home</a></li>
+<li><a href="Espresso.html">Espresso</a></li>
+<li><a href="Cappuccino.html">Cappuccino</a></li>
+<li><a href="CafeLatte.html">Cafe Latte</a></li>
+<li><a href="F.A.Q.html">F.A.Q</a></li>
+</ul>
+</nav>
+	<aside>
+		<img id="coffee" src="images/카푸치노.PNG">
+	</aside>
+	<section>
+		<div id="main" >
+			<p></p>
+			<br>
+			<h3><a href="Home.html">홈으로</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;홈으로</h3>
+			카푸치노(이탈리아어: cappuccino)는 에스프레소를 베이스로 한 커피 음료로, 오스트리아에서 유래되었으며 이후 이탈리아에서 개발했다.<br>
+			 에스프레소에 우유를 붓는 과정까지는 다른 메뉴와 비슷하지만, 그 위에 우유 거품을 두껍게 올리는 것이 카푸치노의 차별점이다.<br>
+			  카페오레, 카페라떼와 비교하면 에스프레소와 직접 섞이는 우유의 양은 상대적으로 적은 만큼 커피 본연의 맛을 더 진하게 느낄 수 있고,<br>
+			   부드러운 우유 거품도 한껏 즐길 수 있다..<br>
+			<p>
+			<h4>레시피</h4>
+			<ol class="left">
+				<li type="1"> 에스프레소 1샷을 내려주세요.이 레시피에는 스타벅스® 싱글 오리진 콜롬비아 by 네스프레소을 추천합니다.<br>
+				 스타벅스® 싱글 오리진 콜롬비아 by 네스카페 돌체구스토 을 이용하셔도 좋습니다.</li>
+				<p></p>
+				<li type="1"> 우유 또는 대체 유제품에 거품을 만들어 주세요.<br>
+				 팁 : 프랜치 프레스 머신으로 우유 거품을 낼 수 있습니다. (반드시, 커피를 먼저 내린 뒤에 사용하세요)</li>
+				<p></p>
+				<li type="1"> 당신이 가장 좋아하는 잔에 에스프레소를 부어 주세요.<br>
+		    	 어느 머그를 사용해도 상관이 없으나, 당신이 제일 좋아하는 머그에 담아주세요.</li>
+				<p></p>
+				<li type="1"> 우유 거품을 담아 주세요. 풍부하고 크리미한 우유 거품은 카푸치노를 진정 특별하게 합니다.<br>
+				 우유 거품이 많을 수록 좋습니다. 우유와 거품이 5:5로 하여 최상의 카푸치노를 완성해보세요.</li>
+				<p></p>
+				<li type="1"> 시나몬 가루 또는 초콜릿 가루를 위에 뿌려주세요.<br>
+				 꼭 필요한 것은 아니지만, 맛을 한 층 더 올려주고, 더 화려한 음료를 완성시킵니다.</li>
+				<p></p>
+				<br>
+			</ol>
+			</p>
+		</div>
+	</section>
+</body>
+</html>
