@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		#menubar {
+			background: olive;
+		}
+
+		#menubar ul {
+			/* 여백과 패딩 모두 0 */
+			margin: 0;
+			padding: 0;
+			width: 567px;
+			/* 모든 아이템(<li>)을 한 줄에 품을 수 있는 폭 */
+		}
+
+		#menubar ul li {
+			display: inline-block;
+			/* 새 줄로 넘어가지 않게 */
+			list-style-type: none;
+			/* 마커 삭제 */
+			padding: 0px 15px;
+			/* top=bottom=0, left=right=15px */
+		}
+
+		#menubar ul li a {
+			color: white;
+			text-decoration: none;
+			/* 링크 보이지 않게 */
+		}
+
+		#menubar ul li a:hover {
+			color: violet;
+			/* 마우스 올라 갈 때 색 */
+		}
+
+		#main {
+			position: relative;
+			background-color: aliceblue;
+			z-index: -1;
+		}
+
+		.left {
+			background-color: aliceblue;
+			padding-left: 240px;
+			padding-right: 80px;
+			
+		}
+
+		#coffee {
+			width: 200px;
+			height: 200px;
+			float: left;
+			z-index: 1;
+			margin-top:16px;
+		}
+
+		body {
+			background-image: url('images/메가커피2.PNG');
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+		}
+		h3 a{
+			padding:5px;
+		}
+	</style>
+</head>
+<body>
+	<nav id="menubar">
+		<ul>
+			<li><a href="Home.html">Home</a></li>
+			<li><a href="Espresso.html">Espresso</a></li>
+			<li><a href="Cappuccino.html">Cappuccino</a></li>
+			<li><a href="CafeLatte.html">Cafe Latte</a></li>
+			<li><a href="F.A.Q.html">F.A.Q</a></li>
+		</ul>
+	</nav>
+	<aside>
+		<img id="coffee" src="images/에스프레소.PNG">
+	</aside>
+	<section>
+		<div id="main" >
+			<p></p>
+			<br>
+			<h3><a href="Home.html">홈으로</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;홈으로</h3>
+			에스프레소(espresso)는 곱게 간 원두에 고온 고압으로 소량의 물을 투과시켜 추출해 데미타스 컵에 담은 커피이다.<br>
+			반대로 물을 투과시키는게 아니라 깔때기에 걸러서 추출하면 드립 커피가 된다.<br>
+			<p>
+			<h4>레시피</h4>
+			<ol class="left">
+				<li type="1"> 에스프레소 2샷을 내려주세요.스타벅스®의 어떤 커피를 사용해도 좋지만,<br>이 레시피에는 스타벅스® 홀리데이 블렌드 원두 또는스타벅스® 토피넛향 커피
+					by 네스프레소 캡슐을 추천합니다.</li>
+				<p></p>
+				<li type="1"> 에스프레소를 머그에 담아주세요.어떠한 머그를 사용해도 좋지만,<br>당신이 가장 좋아하는 머그에 담아 더욱 특별하게 커피를 즐겨보세요.</li>
+				<p></p>
+				<li type="1"> 솔티드 캐러멜 시럽을 더해주세요.모두 잘 섞일 때까지 천천히 저어주세요.
+				<p></p>
+				<li type="1"> 에스프레소 위에 휘핑크림을 올려 홀리데이의 감미로운 감성을 더해주세요.
+				<p></p>
+				<br>
+			</ol>
+			</p>
+		</div>
+	</section>
+</body>
+</html>
