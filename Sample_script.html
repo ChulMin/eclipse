@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		span{
+			background-color: yellow;
+		}
+	</style>
+</head>
+<script type="text/javascript">
+	function over(obj) { // obj=img tag = this
+		obj.src = "./images/banana.PNG"
+	}
+	function out(obj) { // obj=img tag = this
+		obj.src = "./images/apple.PNG"
+	}
+</script>
+
+<body>
+	<h3>마우스 올려보세요</h3>
+	<hr>
+	<!--img src ="images/apple.PNG" alt="이미지"
+ onmouseover="this.src='.images/banana.PNG'"
+ onmouseoout="this.src='.images/banana.PNG'"-->
+	<img src="images/apple.PNG" alt="이미지" onmouseover="over(this)" onmouseout="out(this)">
+	<hr>
+<h3>document.write()활용</h3>
+<hr>
+<script>
+	document.write("<h3>Welcome!</h3>");
+	document.write("<p>2 + 5 는<br>");
+	document.write("<span>7 입니다.</span></p>");
+	document.write("<p>1~100:5050</p>");
+background-color
+</script>
+</body>
+
+</html>

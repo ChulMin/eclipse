@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	var Str1 = prompt("문자1을 입력하세요","hello");
+	st1 =  Str1; 
+	var Str2 = prompt("문자2을 입력하세요","WORLD");
+	st2 =  Str2;
+	
+	if(Str1 == null||Str2 == null){
+	//취소 버튼이나 다이얼로그를 닫은 경우
+	}
+	else if(Str1 == ""||Str2 == ""){
+		// 문자열 입력 없이 확인 버튼 누른 경우
+	}
+	else{
+		//ret에는 사용자가 입력한 문자열
+		str= st1+st2;
+		document.write(str+"<br>");
+		document.write(str.toUpperCase()+"<br>");
+		document.write(str.toLowerCase()+"<br><br>");
+		document.write(st1.toUpperCase()+"<br>");
+		document.write(st2.toLowerCase()+"<br>");
+	}
+</script>
+</body>
+</html>
