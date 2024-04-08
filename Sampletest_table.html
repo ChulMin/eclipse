@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		#ko {
+			color: red;
+		}
+table {
+    margin-left:auto; 
+    margin-right:auto;
+}
+	</style>
+</head>
+
+<body>
+	<h3 align="center">로그인 양식</h3>
+	<hr>
+		<form align="center">
+			<table border="1px">
+				<tr>
+					<th colspan="2"><img width="300px" align="left" src="images/spongebob2.PNG"></th>
+				</tr>
+				<tr>
+					<th align="center" colspan="2">회원가입</th>
+				</tr>
+				<tr>
+					<td>이름</td>
+					<td><input type="text"></td>
+				</tr>
+				<tr>
+					<td>아이디</td>
+					<td><input type="text"></td>
+				</tr>
+				<tr>
+					<td>비밀번호</td>
+					<td><input type="text"></td>
+				</tr>
+				<tr>
+					<td>비밀번호 확인</td>
+					<td><input type="text"></td>
+				</tr>
+				<tr>
+					<td>성별</td>
+					<td>
+						<input type="radio" id="gender">남성
+						<input type="radio" id="gender">여성
+					</td>
+				</tr>
+				<tr>
+					<td>국적</td>
+					<td align="left">
+						<input type="text" id="ko" value="대한민국">&nbsp;
+						<input type="button" value="국적변경">
+					</td>
+				</tr>
+				<tr>
+					<td>가족사항</td>
+					<td>
+						<input type="checkbox" id="famlily">부모
+						<input type="checkbox" id="famlily">형제자매
+						<input type="checkbox" id="famlily">배우자
+						<input type="checkbox" id="famlily">자식
+					</td>
+				</tr>
+				<tr>
+					<td align="left">이력서 작성</td>
+					<td><input type="file" value="파일 선택"></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="submit" value="전송">&nbsp;&nbsp;
+						<input type="reset" value="취소">
+					</td>
+				</tr>
+			</table>
+		</form>
+</body>
+
+</html>
