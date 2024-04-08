@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+		#menubar {
+			background: olive;
+		}
+
+		#menubar ul {
+			/* 여백과 패딩 모두 0 */
+			margin: 0;
+			padding: 0;
+			width: 567px;
+			/* 모든 아이템(<li>)을 한 줄에 품을 수 있는 폭 */
+		}
+
+		#menubar ul li {
+			display: inline-block;
+			/* 새 줄로 넘어가지 않게 */
+			list-style-type: none;
+			/* 마커 삭제 */
+			padding: 0px 15px;
+			/* top=bottom=0, left=right=15px */
+		}
+
+		#menubar ul li a {
+			color: white;
+			text-decoration: none;
+			/* 링크 보이지 않게 */
+		}
+
+		#menubar ul li a:hover {
+			color: violet;
+			/* 마우스 올라 갈 때 색 */
+		}
+
+		#main {
+			position: relative;
+			background-color: aliceblue;
+			z-index: -1;
+		}
+
+		.left {
+			background-color: aliceblue;
+			padding-left: 240px;
+			padding-right: 80px;
+			
+		}
+
+		#coffee {
+			width: 200px;
+			height: 200px;
+			float: left;
+			z-index: 1;
+			margin-top:16px;
+		}
+
+		body {
+			background-image: url('images/메가커피2.PNG');
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+		}
+		h3 a{
+			padding:5px;
+		}
+	</style>
+</head>
+<body>
+<nav id="menubar">
+<ul>
+<li><a href="Home.html">Home</a></li>
+<li><a href="Espresso.html">Espresso</a></li>
+<li><a href="Cappuccino.html">Cappuccino</a></li>
+<li><a href="CafeLatte.html">Cafe Latte</a></li>
+<li><a href="F.A.Q.html">F.A.Q</a></li>
+</ul>
+</nav>
+	<aside>
+		<img id="coffee" src="images/카페라떼.PNG">
+	</aside>
+	<section>
+		<div id="main" >
+			<p></p>
+			<br>
+			<h3><a href="Home.html">홈으로</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;홈으로</h3>
+			Caffe latte. 우유를 넣은 커피의 일종이다. 이탈리아어로 카페는 커피를, 라테는 우유를 뜻한다.<br>
+			 ‘카페 라테’는 이탈리아어로 ‘우유 커피’를 뜻한다. 프랑스어나 스페인어에서는 그대로 우유를 곁들인 커피라는 문어로 카페 라테를 옮겨 적는다.<br>
+			  시중에서도 흔히 접할 수 있는 종류 중 하나이다. 대개 라테라는 것은 에스프레소 위에 우유를 넣는 것으로서 우유가 5mm 정도 맨 위에 층을 이루고 있는 것이 특징이다.<br>
+			<p>
+			<h4>레시피</h4>
+			<ol class="left">
+				<li type="1"> 우유 120ml를 부어주세요.(컵의 약 3/4)</li>
+				<p></p>
+				<li type="1">에스프레소 60ml를 얼음 위로 천천히 부어주세요.</li>
+				<p></p>
+				<li type="1">라떼 층 만드는 포인트는 얼음 위로 천천히 커피를 부어주는 것!</li>
+				<p></p>
+				<br>
+			</ol>
+			</p>
+		</div>
+	</section>
+</body>
+</html>
