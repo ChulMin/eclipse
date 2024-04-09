@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body align="center">
+	<h2>3배수 구하기</h2>
+	<hr>
+<script>
+	var start = prompt("시작범위를 입력하세요",1);
+	var end = prompt("종료범위를 입력하세요",100);
+	var count=0;
+	document.write("3의배수는[");
+	for(;start<=end;start++){
+		if(start%3==0){
+			count++;
+			document.write(start+" ");
+		}
+		
+	}
+			document.write("]이고<br><br> 개수는 "+count+"개 입니다.");
+</script>
+</body>
+</html>
