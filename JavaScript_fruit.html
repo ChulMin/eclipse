@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<h2>과일 판매하기</h2>
+	<hr>
+	<script>
+		var fruit = prompt("과일을 입력해주세요 ex)사과,바나나,키위,배,참외,수박", "사과");
+		var price = 0;
+		if (fruit == "") {
+			document.write("와 아무말도 안혀!!!!!!");
+		}
+		else{
+		if(fruit == "사과" || fruit == "바나나" || fruit == "키위" || fruit == "배" || fruit == "참회" || fruit == "수박" ){
+			var count = prompt(fruit + "를 몇개 구매하시겠습니까?", 10);
+			if (fruit == "사과") {
+				price = 1000;
+				price *= count;
+				document.write("<h2>" + fruit + "는" + price + "원 입니다.");
+			}
+			else if (fruit == "바나나") {
+				price = 300;
+				price *= count;
+				document.write("<h2>" + fruit + "는" + price + "원 입니다.");
+			}
+			else if (fruit == "키위") {
+				price = 1400;
+				price *= count;
+				document.write("<h2>" + fruit + "는" + price + "원 입니다.");
+			}
+			else if (fruit == "참외") {
+				price = 1200;
+				price *= count;
+				document.write("<h2>" + fruit + "는" + price + "원 입니다.");
+			}
+			else if (fruit == "배") {
+				price = 3000;
+				price *= count;
+				document.write("<h2>" + fruit + "는" + price + "원 입니다.");
+			}
+			else if (fruit == "수박") {
+				price = 12000;
+				price *= count;
+				document.write("<h2>" + fruit + "는" + price + "원 입니다.");
+			}
+		}
+		else {
+				document.write(fruit + "는 저희 가게에 없는 과일임돠!!!");
+			}
+		}
+	</script>
+</body>
+
+</html>
