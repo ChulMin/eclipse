@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<h3>document.write()로 표만들기</h3>
+	<hr>
+	<table border="1px">
+		<tr>
+			<script>
+				document.write("<td><b>n</b></td>");
+				for (var i = 0; i <= 9; i++) {
+					document.write("<td>" + i + "</td>");
+				}
+
+				document.write("</tr><tr><td><b>n²</b></td>");
+				for (var i = 0; i <= 9; i++) {
+					document.write("<td>" + (i * i) + "</td>");
+				}
+			</script>
+		</tr>
+
+	</table>
+</body>
+
+</html>
