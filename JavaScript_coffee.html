@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<h2>커피 판매하기</h2>
+	<hr>
+	<script>
+		var coffee = prompt("커피를 입력해주세요 ex)아메리카노,카푸치노,카페라떼,에스프레소", "아메리카노");
+		var price = 0;
+		if (coffee == "") {
+			document.write("고객님 다시 말씀해주세요");
+		}
+		else {
+			if (coffee == "아메리카노" || coffee == "카푸치노" || coffee == "카페라떼" || coffee == "에스프레소") {
+				var temperature = prompt("커피를 ice와 hot 중 어떤걸로 드릴까요?", "ice");
+				if (temperature == "hot") { } else {price = 500;}
+				var count = prompt(coffee + "를 몇잔을 주문하시겠습니까?", 1);
+				if (coffee == "아메리카노") {
+					price += 2000;
+					price *= count;
+					document.write("<h2>" + temperature + " " + coffee + " " + count + "잔은 " + price + "원 입니다.</h2>");
+				}
+				else if (coffee == "카푸치노") {
+					price += 2500;
+					price *= count;
+					document.write("<h2>" + temperature + " " + coffee + " " + count + "잔은" + price + "원 입니다.</h2>");
+				}
+				else if (coffee == "카페라떼") {
+					price += 3000;
+					price *= count;
+					document.write("<h2>" + temperature +  " " + coffee + " " + count + "잔은" + price + "원 입니다.</h2>");
+				}
+				else if (coffee == "에스프레소") {
+					price += 1000;
+					price *= count;
+					document.write("<h2>" + temperature +  " " + coffee + " " + count + "잔은" + price + "원 입니다.</h2>");
+				}
+			}
+			else {
+				document.write("고객님" + coffee + "는 저희매장에서 판매하지 않는 상품입니다.");
+			}
+
+		}
+	</script>
+</body>
+
+</html>
