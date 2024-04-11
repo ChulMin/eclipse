@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function adder(a,b){
+		var sum;
+		add= a+b;
+		return add;
+	}
+	function muler(a,b){
+		var mul;
+		mul= a*b;
+		return mul;
+	}
+	function suber(a,b){
+		var sub;
+		sub= a-b;
+		return sub;
+	}
+	function diver(a,b){
+		var div;
+		div= a/b;
+		return div;
+	}
+	function diver2(a,b){
+		var div;
+		div= a%b;
+		return div;
+	}
+	function print(pt){
+		document.write(pt);
+	}
+	
+</script>
+</head>
+<body>
+<script>
+	var n1 = prompt("정수1 입력",10);
+	var n2 = prompt("정수2 입력",10);
+	n1 = parseInt(n1);
+	n2 = parseInt(n2);
+	var pt = adder(n1,n2);
+	print(pt+"<br>");
+	print("+"+adder(n1,n2)+"<br>");
+	print("-"+suber(n1,n2)+"<br>");
+	print("*"+muler(n1,n2)+"<br>");
+	print("/"+diver(n1,n2)+"<br>");
+	print("%"+diver2(n1,n2)+"<br>");
+	alert();//경고창
+</script>
+</body>
+</html>

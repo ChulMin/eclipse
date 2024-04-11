@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<script>
+		var sq = Math.sqrt(4); // 4의 제곱근을 구하면 2
+		var area = Math.PI * 2 * 2; // 반지름이 2인 원의 면적
+		document.write(sq + " ");
+		document.write(area + "<hr>");
+		// 0~99까지 랜덤한 정수를 10개 만드는 코드
+		for (i = 0; i < 10; i++) {
+			var m = Math.random() * 100; // m은 0~99.999... 보다 작은 실수 난수
+			var n = Math.floor(m); // m에서 소수점 이하를 제거한 정수(0~99사이)
+			document.write(n + " ");
+		}
+		document.write(area + "<hr>");
+		//0~99까지 랜덤한 정수를 10개 만드는 코드
+		for (i = 0; i < 10; i++) {
+			var m = Math.random() * 100; // m은 0~99.999... 보다 작은 실수 난수
+			document.write(m + " ");
+			document.write("<br><br>");
+			var n = Math.floor(m); // m에서 소수점 이하를 제거한 정수(0~99사이)
+			document.write(n + " ");
+			document.write("<br><br>");
+		}
+		document.write("random()실행만....<br><br>");
+		document.write(area + "<hr>");
+		for (i = 0; i < 10; i++) {
+			var k = Math.random() * 100; // m은 0~99.999... 보다 작은 실수 난수
+			var g = Math.floor(k); // m에서 소수점 이하를 제거한 정수(0~99사이)
+			document.write(g + " ");
+		}
+	</script>
+</body>
+
+</html>
