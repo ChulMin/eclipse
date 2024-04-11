@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		function rotto() {
+			n = [];
+			var i=0;//배열안에 저장하기위한 객체
+			while(n.length < 6) {//로또 6개 저장될 때까지 반복
+				x = Math.floor(Math.random() * 45 + 1);//랜덤숫자뽑기
+						//랜덤으로 뽑은 숫자가 n[]안에 있는 숫자인지 확인.
+						if(n.indexOf(x)<0){// 없는 숫자면 -1이여서 조건문안으로 들어온다. 
+						//ex) n[1,2,3]이미 있다는 가정하에 x에서 3이 나오면 인덱스번호 2 -> if(2<0) 2는 0보다 크기 때문에 조건문 들어가지 않고 반복 
+						//ex) n[1,2,3]이미 있다는 가정하에 x에서 4가 나오면 n[]안에 없어서 -1  -> if(-1<0) -1는 0보다 작기 때문에 조건문 안에 들어온다.
+						n[i] = x;//n[]안에 저장
+						i++; //다음 인덱스번호로 바뀌기위해 1을 더한다. 
+						}
+					}
+			return n;
+		}
+		r = rotto();
+		r = r.sort(function (a, b) {return a - b;});//오름차순정렬
+		alert("이번주 로또번호는 " + r + " 입니다");//메세지로 출력
+	</script>
+</body>
+</html>

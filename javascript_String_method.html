@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>String 객체의 메소드 활용</h3>
+<hr>
+<script>
+var a = new String("Boys and Girls");
+var b = "!!";
+document.write("a : " + a + "<br>");
+document.write("b : " + b + "<br><hr>");
+document.write(a.charAt(0) + "<br>");//a의 인덱스번호 0을 출력한다.
+document.write(a.concat(b, "입니다") + "<br>");//a안의 문자열과 b안의 문자열, "입니다"를 붙인다.  
+document.write(a.indexOf("s") + "<br>");//s의 인덱스 번호
+document.write(a.indexOf("And") + "<br>");//인덱스 안에 없으면 -1
+document.write(a.slice(5, 8) + "<br>");//인덱스 5에서 8이전까지
+document.write(a.substr(5, 3) + "<br>");//인덱스 5에서 3글자만
+document.write(a.toUpperCase() + "<br>");//a안의 문자열을 대문자로 출력한다.
+document.write(a.replace("and", "or") + "<br>");// a안의 and 문자열을 or로 변환한다.
+document.write(" kitae ".trim() + "<br><hr>");//
+var sub = a.split(" ");
+document.write("a를 빈칸으로 분리<br>");
+for(var i=0; i<sub.length; i++)
+document.write("sub" + i + "=" + sub[i] + "<br>");
+document.write("<hr>String 메소드를 실행 후 a와 b 변함 없음<br>");
+document.write("a : " + a + "<br>");
+document.write("b : " + b + "<br>");
+</script>
+
+</body>
+</html>
