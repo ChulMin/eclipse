@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>사진 이미지 - onmouseover&onmouseout</title>
+</head>
+<style>
+	body{
+		background-color: yellow;
+		margin-left: 40px;
+		margin-right: 40px;
+	}
+	hr{
+		height: 5px;
+		border: 1px solid grey;
+		background-color: darkred;
+	}
+	h3{
+		text-align: center;
+		color: deepskyblue;
+	}
+	span{
+		font-weight: bold;
+		font-size:20px;
+		height: 5px;
+		color:darkorchid;
+	}
+	img{
+		width: 300px;
+	}
+</style>
+<script>
+	function show(){
+		document.getElementById("fig").src = "images/kim.jpg"
+	}
+	function hide(){
+		document.getElementById("fig").src="";
+	}
+</script>
+<body>
+	<h3 onmouseover="show()" onmouseout="hide()">kim dae bin</h3>
+	<!-- hr태그는 콘텐츠 내용에서 주제가 바뀔 때 수평 가로선을 정의할 때 사용합니다. . -->
+	<hr>
+	<!-- div태그는 구역(레이아웃)을 나누는데 사용된다.-->
+	<div align="center">
+		<img id="fig" src="">
+		<h1 align="center">클라우드 컴퓨팅 이점</h1><br>
+		다양한 산업 전반에 걸쳐 기업의 클라우드로 전환을 이끄는 몇 가지 트렌드가 있습니다.<br>
+		대부분의 조직에서 현재의 비즈니스 수행 방식은 성장에 필요한 민첩성, 경쟁력 높은 플랫폼 또는 유연성을 제공하지 못하고 있습니다.<br> 점점 늘어나는 디지털 비즈니스에 의해 폭발적으로 생성되는
+		데이터는<br> 데이터 센터 스토리지의 비용과 복잡성을 새로운 수준으로 끌어 올리고 IT에 새로운 기술과 분석 도구를 요구합니다.<br>
+
+		최신 클라우드 솔루션은 기업이 디지털 시대의 과제를 해결할 수 있도록 지원합니다.<br> IT를 관리하는 대신 조직은 더 빠르고 복잡한 비즈니스 환경에 신속하게 대응할 수 있습니다.<br> 모던
+		클라우드 경제성을 통해 클라우드는 비즈니스 가치를 제공하고 비용을 절감하므로 기업은 클라우드 지출을 통해 전체 비즈니스 잠재력을 달성할 수 있습니다.
+		<!--하나의 문단을 만들 때 쓰입니다.-->
+		<p></p>
+		클라우드 컴퓨팅은 다음과 같은 영역을 포함하여 기존 정보 기술보다 우수한 대안을 제공합니다.<br>
+		<!--ul태그는 순서가 없는 HTML 리스트(list)를 정의할 때 사용합니다. ul안에 문단을 밖에 문단과 한 단 뛰어 줌으로써 구별해준다. -->
+		<ul>
+			<li><span>비용 절감</span> - 자본 비용 제거<br></li>
+			<li><span>개발 및 테스트를 위한 공간</span>을 지속적으로 프로비저닝<br></li>
+			<li><span>전 세계적인 확장</span> - 확장 탄력성<br></li>
+			<li><span>생산성</span> - 협업 기능 확장, 예측 가능한 성능, 고객 격리<br></li>
+			<li><span>성능</span> - 클라우드 네이티브 워크로드를 위한 보다 효율적인 가격 대비 성능<br></li>
+			<li><span>안정성</span> - 내결함성, 확장성, 모든 서비스 전반의 분산형 시스템<br></li>
+		</ul>
+	</div>
+	<img src="images/kim.jpg" width="300" height="300" alt="프로필사진">
+</body>
+
+</html>
