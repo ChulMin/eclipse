@@ -1,0 +1,44 @@
+@charset "UTF-8";
+	@keyframes textColorAnimation {
+0% { color : blue; }
+30% { color : green; } 
+100% { color : red; }
+}
+span {
+animation-name : textColorAnimation; 
+animation-duration : 5s;
+animation-iteration-count : infinite; 
+}
+@keyframes bomb {
+from { font-size : 500%;}
+to { font-size : 100%;}
+}
+h3 {
+animation-name : bomb;
+animation-duration : 3s;
+animation-iteration-count : infinite;
+}
+#boom{
+transition : font-size 5s;
+} 
+#boom:hover {
+font-size : 500%;
+}
+div {
+display : inline-block;
+padding : 5px;
+color : white;
+background : olivedrab;
+}
+/* 변환 */
+div#rotate { transform : rotate(20deg); }
+div#skew { transform : skew(0deg,-20deg); }
+div#translate { transform : translateY(100px); }
+div#scale { transform : scale(3,1); }
+/* 마우스 올릴 때 추가 변환 */
+div#rotate:hover { transform : rotate(80deg);}
+div#skew:hover { transform : skew(0deg, -60deg); }
+div#translate:hover { transform : translate(50px, 100px); }
+div#scale:hover { transform : scale(4,2); }
+/* 마우스 누를 때 추가 변환 */
+div#scale:active { transform : scale(1,5); }
