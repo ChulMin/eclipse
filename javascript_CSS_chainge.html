@@ -7,7 +7,12 @@
 	<script>
 		function change1() {
 			var span1 = document.getElementById("change1");
+			 if (span1.innerHTML == "답") {
 			span1.innerHTML = 6;
+			}
+			else{
+				span1.innerHTML = "답";
+			}
 		}
 		function change2() {
 			var span2 = document.getElementById("change2");
@@ -15,6 +20,7 @@
 		}
 		 function change3() {
 			var span3 = document.getElementById("change3");
+			
 			span3.innerHTML = -12;
 		}
 	</script>
