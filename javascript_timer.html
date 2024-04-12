@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		h2 {
+			background-color: #FFF;
+			font-size: 20px;
+		}
+
+		* {
+			padding: 0;
+			margin: 0;
+			font-family: "Arial Black";
+			font-size: 70px;
+		}
+
+		.clock {
+			width: 460px;
+			height: 160px;
+			background-color: aqua;
+			margin: 50px;
+			padding: 30px;
+			box-sizing: border-box;
+			border-radius: 30px;
+		}
+
+		.clock h1 {
+			float: left;
+			width: 100px;
+			height: 100px;
+			background-color: #FFF;
+			text-align: center;
+		}
+
+		.clock .colon {
+			width: 50px;
+		}
+	</style>
+</head>
+<script>
+	window.onload = function () { //준비구문
+
+		var hours = document.getElementById("hour");
+		var minutes = document.getElementById("minute");
+		var seconds = document.getElementById("second");
+
+		setInterval(function nowDate() {
+
+			var now = new Date();
+
+			var hNow = now.getHours(); //시를 받아오는 메서드
+			var mNow = now.getMinutes(); //분을 받아오는 메서드
+			var sNow = now.getSeconds(); //초를 받아오는 메서드 
+
+			if (hNow < 10) {
+				hNow = '0' + hNow;
+			}
+			if (mNow < 10) {
+				mNow = '0' + mNow;
+			}
+			if (sNow < 10) {
+				sNow = '0' + sNow;
+			}
+
+			hours.innerHTML = hNow; // 시
+			minutes.innerHTML = mNow;  // 분
+			seconds.innerHTML = sNow;  // 초
+
+		}, 1000);
+	};
+
+</script>
+
+<body>
+	<h1 align="center">시계 만들기</h1>
+	<center>
+		<div class="clock">
+			<h1 id="hour"></h1>
+			<h1 class="colon">:</h1>
+			<h1 id="minute"></h1>
+			<h1 class="colon">:</h1>
+			<h1 id="second"></h1>
+		</div>
+	</center>
+</body>
+
+</html>
