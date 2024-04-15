@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>클릭! 1,2,3</title>
+</head>
+<!-- 버튼을 클릭하면 one, two, three가 출력 -->
+<script type="text/javascript">
+	function select() {
+		
+		b123 = document.getElementById("b123"); 
+		p123 = document.getElementById("print123");
+		var i = 0;
+		
+		
+		b123.onclick = function () { // 익명 함수
+			
+			i++;
+			
+			if(i>=4) {
+				i=0;
+			};
+			
+			if(i==0) {
+				p123.innerHTML = "";
+			} else if(i==1) {
+				p123.innerHTML = "one";
+			} else if(i==2) {
+				p123.innerHTML = "one<br>two";
+			} else if(i==3) {
+				p123.innerHTML = "one<br>two<br>three";
+			};
+			//print(i);
+			
+		};
+	}
+	/*
+	function print(var i) {
+		p123 = document.getElementById("print123");
+		if(i==0) {
+			p123.innerHTML = "클릭";
+		} else if(i==1) {
+			p123.innerHTML = "one";
+		} else if(i==2) {
+			p123.innerHTML = "one\ttwo";
+		} else if(i==3) {
+			p123.innerHTML = "one\ttwo\tthree";
+		};
+	}
+	*/
+	
+</script>
+<body onload="select()">
+	<button id="b123">클릭!</button>
+	<h2 id="print123">클릭</h2>
+
+</body>
+</html>
