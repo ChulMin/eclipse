@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>회원가입</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+    }
+    h1 {
+        color: #333;
+        margin-top: 50px;
+    }
+    form {
+        margin-top: 20px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        margin: auto;
+    }
+    input[type="text"], input[type="email"], input[type="password"], input[type="radio"], input[type="submit"], input[type="button"] {
+        margin: 10px 0;
+        padding: 10px;
+        width: calc(100% - 20px);
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    input[type="submit"], input[type="button"] {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover, input[type="button"]:hover {
+        background-color: #45a049;
+    }
+    #message {
+        margin-top: 10px;
+        color: #333;
+    }
+</style>
+</head>
+<body>
+<h1>회원가입</h1>
+<form id="signup-form">
+    <input type="text" id="username" placeholder="아이디">
+    <br>
+    <input type="email" id="email" placeholder="이메일">
+    <br>
+    <input type="password" id="password" placeholder="비밀번호">
+    <br>
+    <input type="password" id="confirm-password" placeholder="비밀번호 확인">
+    <br>
+    <div>
+        메일 링 수신 여부:
+        <input type="radio" id="receive-yes" name="receive" value="yes" checked> <label for="receive-yes">예</label>
+        <input type="radio" id="receive-no" name="receive" value="no"> <label for="receive-no">아니오</label>
+    </div>
+    <br>
+    <input type="submit" value="가입하기">
+    <input type="button" value="취소" onclick="resetForm()">
+</form>
+<div id="message"></div>
+
+<script>
+    document.getElementById('signup-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // 기본 이벤트 동작 방지
+
+        // 사용자 입력값 가져오기
+        var username = document.getElementById('username').value;
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        var confirmPassword = document.getElementById('confirm-password').value;
+        var receive = document.querySelector('input[name="receive"]:checked').value;
+
+        // 입력값 유효성 검사
+        if (!username || !email || !password || !confirmPassword) {
+            document.getElementById('message').innerText = "모든 필드를 입력해주세요.";
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            document.getElementById('message').innerText = "비밀번호가 일치하지 않습니다.";
+            return;
+        }
+
+        // 회원가입 성공 메시지 표시
+        document.getElementById('message').innerText = "회원가입이 완료되었습니다.";
+        // 여기서는 실제로는 서버와 통신하여 회원가입 데이터를 처리해야 합니다.
+        // 이 예제에서는 간단하게 콘솔에 출력하는 것으로 대체합니다.
+        console.log("아이디:", username);
+        console.log("이메일:", email);
+        console.log("비밀번호:", password);
+        console.log("메일 링 수신 여부:", receive);
+    });
+
+    // 취소 버튼 클릭 시 입력 내용 초기화
+    function resetForm() {
+        document.getElementById('signup-form').reset();
+        document.getElementById('message').innerText = "";
+    }
+</script>
+</body>
+</html>
