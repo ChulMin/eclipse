@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<style>
+.image-container {
+   cursor: pointer;
+}
+
+img {
+   max-width: 100%;
+   height: auto;
+}
+</style>
+
+</head>
+<body onload=asd()>
+   <h3>휠로 조정</h3>
+   <hr>
+   <p>마우스 휠</p>
+   <div class="image-container" onwheel="handleWheel(event)">
+      <img id="zxc" src="../images/apple.PNG">
+<script>
+     function handleWheel(event) {
+          var img = document.getElementById("zxc");
+          var currentSize = img.clientWidth;
+          var delta = event.deltaY > 0 ? -0.1 : 0.1;
+
+          var newWidth = currentSize + currentSize * delta;
+
+          img.style.width = newWidth + "px";
+
+          event.preventDefault();
+     } 
+</script>
+</body>
+</html>
