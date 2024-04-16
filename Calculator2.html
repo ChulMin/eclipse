@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>간단한 계산기</title>
+<script>
+    function calculate() {
+        var cal = document.getElementById("cal").value;
+        var result = document.getElementById("result");
+
+        // Validate input
+        if (cal.trim() === "") {
+            result.value = "식을 입력하세요.";
+            return;
+        }
+
+        try {
+            // Use Function constructor to evaluate the expression
+            var expression = new Function('return ' + cal)();
+            result.value = expression;
+        } catch (error) {
+            result.value = "잘못된 수식입니다.";
+        }
+    }
+</script>
+</head>
+<body>
+<h2>간단한 계산기</h2>
+<hr>
+<p>계산하고자 하는 수식을 입력하고 계산 버튼을 눌러보세요.</p>
+<form>
+    식<input type="text" id="cal" value=""><br>
+    값<input type="text" id="result">
+    <input type="button" value=" 계산 " onclick="calculate()">
+</form>
+</body>
+</html>
