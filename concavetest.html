@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오목</title>
+<style>
+    body {
+		background-image:url("../images/오목.jpg");
+        font-family: Arial, sans-serif;
+        text-align: center;
+         background-size: 2240px 1057px;
+    }
+    h1{
+		background-image:url("../images/바둑돌.webp");
+		 background-size: 200px 100px;
+		color:darkorange;
+		width: 200px;
+		height: 100px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+    #board {
+		background: burlywood;
+        display: inline-block;
+        margin-top: 20px;
+    }
+    .cell {
+        width: 50px;
+        height: 50px;
+        border: 1px solid black;
+        display: inline-block;
+        vertical-align: top;
+        box-sizing: border-box;
+        cursor: pointer;
+        position: relative;
+    }
+    .stone {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        top: 5px;
+        left: 5px;
+    }
+</style>
+</head>
+<body>
+<h1>오목판</h1>
+<div id="board"></div>
+<script>
+    const BOARD_SIZE = 15;
+    let board = [];
+    let currentPlayer = 'black';
+
+    // 보드 초기화
+    function initBoard() {
+        for (let i = 0; i < BOARD_SIZE; i++) {
+            board[i] = [];
+            for (let j = 0; j < BOARD_SIZE; j++) {
+                board[i][j] = '';
+            }
+        }
+    }
+
+    // 보드 그리기
+    function drawBoard() {
+        let boardDiv = document.getElementById('board');
+        for (let i = 0; i < BOARD_SIZE; i++) {
+            for (let j = 0; j < BOARD_SIZE; j++) {
+                let cell = document.createElement('div');
+                cell.className = 'cell';
+                cell.dataset.row = i;
+                cell.dataset.col = j;
+                cell.addEventListener('click', placeStone);
+                boardDiv.appendChild(cell);
+            }
+            boardDiv.appendChild(document.createElement('br'));
+        }
+    }
+
+    // 돌 놓기
+    function placeStone(event) {
+        let row = parseInt(event.target.dataset.row);
+        let col = parseInt(event.target.dataset.col);
+        if (board[row][col] === '') {
+            board[row][col] = currentPlayer;
+            let stone = document.createElement('img');
+            stone.src = (currentPlayer === 'black') ? '../images/검은돌.png' : '../images/하얀돌.png';
+            stone.className = 'stone';
+            event.target.appendChild(stone);
+            if (checkWinner(row, col)) {
+                alert(currentPlayer + ' wins!');
+                resetBoard();
+            } else {
+                currentPlayer = (currentPlayer === 'black') ? 'white' : 'black';
+            }
+        }
+    }
+
+    // 승자 확인
+    function checkWinner(row, col) {
+        return (
+            checkDirection(row, col, 0, 1) + checkDirection(row, col, 0, -1) >= 4 || // 가로
+            checkDirection(row, col, 1, 0) + checkDirection(row, col, -1, 0) >= 4 || // 세로
+            checkDirection(row, col, 1, 1) + checkDirection(row, col, -1, -1) >= 4 || // 대각선 /
+            checkDirection(row, col, 1, -1) + checkDirection(row, col, -1, 1) >= 4 // 대각선 \
+        );
+    }
+
+    // 특정 방향으로의 연속된 돌 개수 확인
+    function checkDirection(row, col, dr, dc) {
+        let count = 0;
+        let r = row + dr;
+        let c = col + dc;
+        while (r >= 0 && r < BOARD_SIZE && c >= 0 && c < BOARD_SIZE && board[r][c] === board[row][col]) {
+            count++;
+            r += dr;
+            c += dc;
+        }
+        return count;
+    }
+
+    // 보드 초기화
+    function resetBoard() {
+        initBoard();
+        let boardDiv = document.getElementById('board');
+        boardDiv.innerHTML = '';
+        drawBoard();
+    }
+
+    // 게임 시작
+    initBoard();
+    drawBoard();
+</script>
+</body>
+</html>
