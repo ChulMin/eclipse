@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택된 물품 계산하기</title>
+<script>
+	var sum = 0;
+	
+	function calc() {
+        sum = 0;     
+        var itemInputs = document.querySelectorAll('.item-price');
+        
+     
+        itemInputs.forEach(function(input) {         
+            sum += parseInt(input.value) || 0; 
+        });
+		
+		document.getElementById("sumtext").value = sum;
+	}
+    
+    function clearValues() {        
+        var itemInputs = document.querySelectorAll('.item-price');        
+       
+        itemInputs.forEach(function(input) {
+            input.value = "";
+        });
+        
+        calc();
+    }
+</script>
+</head>
+<body>
+	<h3>물품을 입력하면 금액이 자동 계산됩니다</h3>
+	<hr>
+	<form>
+        <label for="hap">모자 가격 입력:</label>
+		<input type="text" name="hap" class="item-price" placeholder="모자 가격 입력" oninput="calc()"><br>
+        <label for="shose">구두 가격 입력:</label>
+		<input type="text" name="shose" class="item-price" placeholder="구두 가격 입력" oninput="calc()"><br>
+        <label for="bag">가방 가격 입력:</label>
+		<input type="text" name="bag" class="item-price" placeholder="가방 가격 입력" oninput="calc()"><br>
+		지불하실 금액 <input type="text" id="sumtext" value="0" readonly><br>
+        <button type="button" onclick="clearValues()">Clear Values</button>
+	</form>
+</body>
+</html>
