@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>윈도우 열기</title>
+<script>
+	function load1(URL) {
+		window.open(URL, "myWin1", "left=200,top=100,width=400,height=300");
+	}
+	function load2(URL) {
+		window.open(URL, "myWin2", "left=200,top=200,width=400,height=300");
+	}
+	function load3(URL) {
+		window.open(URL, "myWin3", "left=200,top=400,width=400,height=300");
+	}
+</script>
+</head>
+<body>
+	<h3>window.open()으로 윈도우 열기</h3>
+	<hr>
+	<a href="javascript:load1('http://www.naver.com')">네이버 홈 페이지</a><br>
+	<a href="javascript:load2('http://www.google.com')">구글 홈 페이지</a><br>
+	<a href="javascript:load3('http://www.disneyworld.com')">디즈니월드 홈 페이지</a><br>         
+</body>
+</html>
