@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>제목을 입력하세요</title>
+	<link rel="stylesheet" type="text/css"  href="../CSS/explanation.css">
+	<script src="../js/explanation.js"></script>
+</head>
+<body>
+	<h2>아이템에 마우스를 올리면 설명 출력</h2>
+	<hr>
+	여름 방학 때 하고 싶은 것들
+	<ul>
+		<li title="파란 자전거로 시작지점은 인천에서 시작 중간에 부산에 들려서 관광하고 인천으로 돌아오기"
+			onmouseover="show(event, this.getAttribute('title'))" onmouseout="hide()">자전거로 대한민국 일주</li>
+		<li title="로맨스, 판타지, 무협, 문학, SF 등등" onmouseover="show(event, this.getAttribute('title'))" onmouseout="hide()">책
+			100권 읽기</li>
+		<li title="아침에는 수영을 배우고, 점심 먹고 자전거 훈련 30km, 저녁에는 10km 달리기하기"
+			onmouseover="show(event, this.getAttribute('title'))" onmouseout="hide()">철인 3종 경기 준비</li>
+		<li title="JAVA부터 HTML까지 배우면 풀스택 개발자가 됩니다!!!" onmouseover="show(event, this.getAttribute('title'))"
+			onmouseout="hide()">자바스크립트 정복</li>
+	</ul>
+	<!-- 설명을 표시할 div -->
+	<div id="shows"></div>
+</body>
+</html>

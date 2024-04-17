@@ -1,0 +1,10 @@
+@charset "UTF-8";
+#shows {
+            position: absolute;
+            background-color: skyblue;
+            border: 2px solid #ccc;
+            padding: 10px; /* 내부 여백을 조금 더 크게 설정 */
+            border-radius: 5px;
+            z-index: 1;
+            display: none; /* 초기에는 표시하지 않음 */
+        }
