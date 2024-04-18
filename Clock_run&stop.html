@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>시계 만들기</title>
+<style>
+    div {
+		display: inline-block;
+		width:7em;
+		border: 1px solid gray;
+		background-color: aliceblue;
+		cursor: pointer; /* 마우스 커서를 포인터로 변경하여 클릭 가능한 상태로 표시 */
+	}
+</style>
+<script>
+	var count=0;
+	var run;
+   function startClock(){
+	   var clock = document.getElementById("clock");
+	   timeout(clock);
+   }
+   function timeout(obj){
+	   var current = new Date();
+	   obj.innerHTML = current.toLocaleTimeString()
+	   run = setInterval(function() { timeout(obj); }, 1000); // timeout 함수에 obj를 전달하도록 수정
+   }
+   function clickClock(){
+	   if(count==1){
+		 run= setInterval(function() { timeout(clock); }, 1000); // timeout 함수에 clock을 전달하도록 수정
+		 clock.style.color="black"; // 클릭 시 텍스트 색을 원래대로 변경
+		 count=0;
+	   }
+	   else{
+		 clearInterval(run);
+		 clock.style.color="gray"; // 클릭 시 텍스트 색을 회색으로 변경
+		 count=1;  
+	   }
+   }
+</script>
+</head>
+<body onload="startClock()">
+	<h3>div 태그에 시계 만들기</h3>
+	<hr>
+    <div id="clock" onclick="clickClock()"></div> <!-- 클릭 이벤트 함수명을 clickClock으로 수정 -->
+</body>
+</html>
