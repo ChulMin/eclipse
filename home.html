@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>과일 사이트</title>
+    <link rel="stylesheet" type="text/css" href="../css/home.css">
+</head>
+<script src="../javascript/home.js"></script>
+<body>
+    <header>
+        <h1>
+            <a href="home.html"><img src="../img/평가사이트 이미지.PNG" alt="과일 사이트 이미지"></a>
+            <a href="home.html" id="siteLink">과일 사이트</a>
+        </h1>
+    </header>
+    <hr>
+    <nav>
+        <ul>
+            <li><a href="https://orangec.co.kr/" onclick="siteLink('https://orangec.co.kr/')">본점</a></li>
+            <li><a href="https://www.youtube.com/watch?v=tuFn7OW5bbo/"
+                    onclick="siteLink('https://www.youtube.com/watch?v=tuFn7OW5bbo/')">과일 소개</a></li>
+            <li><a href="pay.html/" onclick="siteLink('../html/pay.html')">결제하기</a></li>
+        </ul>
+    </nav>
+    <hr>
+    <form name="home" action="pay.html" method="post">
+        <aside>
+            <article id="category">
+                <h2>category</h2>
+                <ul>
+                    <li class="fruit" onclick="fruitClicked('사과')" value="사과">사과</li>
+                    <li class="fruit" onclick="fruitClicked('바나나')" value="바나나">바나나</li>
+                    <li class="fruit" onclick="fruitClicked('파인애플')" value="파인애플">파인애플</li>
+                    <li class="fruit" onclick="fruitClicked('참외')" value="참외">참외</li>
+                    <li class="fruit" onclick="fruitClicked('배')" value="배">배</li>
+                    <li class="fruit" onclick="fruitClicked('수박')" value="수박">수박</li>
+                    <li class="fruit" onclick="fruitClicked('귤')" value="귤">귤</li>
+                    <li class="fruit" onclick="fruitClicked('오렌지')" value="오렌지">오렌지</li>
+                </ul>
+            </article>
+            <article id="articlemain">
+                <img id="imgLink" src="../img/apple.PNG">
+                <div>
+                    <h3>과일성분</h3>
+                    <p id="contentParagraph1">내용</p>
+
+                    <button type="button" onclick="fruitscreen()">찜한내용 보러가기</button>
+
+                    <h3>찜한 과일 목록</h3>
+                    <ul id="contentParagraph2">
+                    </ul>
+                </div>
+            </article>
+        </aside>
+        <main>
+            <article>
+                <h2>찜한 과일</h2>
+                <ul id="selectedFruitsList">
+                    <!-- 선택한 과일이 여기에 추가됩니다. -->
+                    <li type="none"></li>
+                    <a href="pay.html">결제하러 가기</a>
+                </ul>
+                <table align="center">
+                    <tr>
+                        <td colspan="3" align="center"><b>
+                                <font size="5"></font>Log In
+                    </tr>
+                    <tr>
+                        <td>아이디&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                        <td><input type="text" name="id" /></td>
+                    </tr>
+                    <tr>
+                        <td>비밀번호</td>
+                        <td><input type="password" name="pass" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="button" value="로그인" onclick="alert('로그인이 작동하였습니다!')">&nbsp;&nbsp;
+                            <input type="reset" value="새로고침">&nbsp;&nbsp;
+                            <input type="button" value="회원가입" onclick="location.href='join.html'">
+                        </td>
+                    </tr>
+                </table>
+            </article>
+        </main>
+    </form>
+    <footer>
+        <center><small align="center">Copyright (c) 2024 OrangeC Web Site</small></center>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입창</title>
+    <link rel="stylesheet" type="text/css" href="../css/join.css">
+</head>
+<script>
+    function load() {
+        var select = document.getElementById("site");
+        window.location = select.options[select.selectedIndex].value;
+    }
+
+    function submitForm() {
+        var inputs = document.getElementsByTagName("input");
+        var values = [];
+        var emptyFields = []; // 입력되지 않은 필드의 이름을 저장할 배열
+
+        for (var i = 0; i < inputs.length; i++) {
+            if (inputs[i].type !== "button" && inputs[i].type !== "submit" && inputs[i].type !== "reset") {
+                values.push(inputs[i].value);
+
+                // 값이 입력되지 않은 필드를 찾아서 이름을 저장합니다.
+                if (inputs[i].value.trim() === "") {
+                    emptyFields.push(inputs[i].previousElementSibling.textContent);
+                }
+            }
+        }
+
+        if (emptyFields.length === 0) {
+            var newWindow = window.open("", "", "width=400,height=300");
+            newWindow.document.write("<table border='1'>");
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type !== "button" && inputs[i].type !== "submit" && inputs[i].type !== "reset") {
+                    newWindow.document.write("<tr><td>" + inputs[i].previousElementSibling.textContent + "</td><td>" + inputs[i].value + "</td></tr>");
+                }
+            }
+            newWindow.document.write("</table>");
+            newWindow.document.close();
+        } else {
+            var errorMessage = "다음 필드를 입력하세요: " + emptyFields.join(", ");
+            alert(errorMessage);
+        }
+    }
+</script>
+
+<body>
+    <header>
+        <h1>
+            <a href="home.html"><img src="../img/평가사이트 이미지.PNG" alt="과일 사이트 이미지"></a>
+            <a href="home.html" id="siteLink">과일 사이트</a>
+        </h1>
+    </header>
+    <hr>
+    <nav>
+        <ul>
+            <li><a href="https://orangec.co.kr/" onclick="siteLink('https://orangec.co.kr/')">본점</a></li>
+            <li><a href="https://www.youtube.com/watch?v=tuFn7OW5bbo/"
+                    onclick="siteLink('https://www.youtube.com/watch?v=tuFn7OW5bbo/')">과일 소개</a></li>
+            <li><a href="pay.html/" onclick="siteLink('../html/pay.html')">결제하기</a></li>
+        </ul>
+    </nav>
+    <hr>
+    <form name="home" action="pay.html" method="post">
+        <fieldset>
+            <legend>회원정보</legend>
+            <span>아이디</span><input type="text" name="id"><input type="button" value="중복검사"><br>
+            <span>패스워드 </span><input type="password" name="password"><br>
+            <span>패스워드 확인</span><input type="password" name="confirmPassword"><br>
+            <span>이름</span><input type="text" name="name"><br>
+            <span>전화번호</span><input type="tel" name="phone"><br>
+            <span>이메일</span><input type="email" name="email"><br>
+            <span>생일</span><input type="date" name="birth" value=""><br>
+            <span>홈페이지</span><input type="url" name="website"><br>
+            <span>성별</span><input name="gender" type="radio" value="남성">남성
+            <input name="gender" type="radio" value="여성">여성<br>
+            <input type="submit" value="제출" onclick="submitForm()">&nbsp;&nbsp;
+            <input type="reset" value="초기화">&nbsp;&nbsp;
+        </fieldset>
+        <small>질문 : Tel. 010-111-1111</small>
+    </form>
+    <footer>
+        <center><small align="center">Copyright (c) 2024 OrangeC Web Site</small></center>
+    </footer>
+</body>
+
+</html>
