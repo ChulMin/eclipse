@@ -10,6 +10,7 @@
 <title>회원목록리스트</title>
 </head>
 <body>
+
 	<h2>회원정보 목록 보기 화면</h2>
 	<table border="1" style="text-align: center;background:greenyellow">
 		<tr>
@@ -24,6 +25,7 @@
 			<th width="150">가입날짜</th>
 		</tr>
 		<%
+		request.setCharacterEncoding("UTF-8");
 		memberDAO mdao = new memberDAO();
 		Vector<memberDTO> vec = mdao.Allselectmember();
 		for (int i = 0; i < vec.size(); i++) {
