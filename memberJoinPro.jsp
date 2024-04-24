@@ -17,6 +17,7 @@
 
 	String id = request.getParameter("id");
 	String passwd1 = request.getParameter("passwd1");
+	String passwd2 = request.getParameter("passwd2");
 	String name = request.getParameter("name");
 	String email = request.getParameter("email");
 	String phone = request.getParameter("phone");
@@ -30,25 +31,40 @@
 		<!-- setId(String id) -->
 	</jsp:useBean>
 	<%
-	String hobby[] = request.getParameterValues("hobby");
-	String texthobby = "";//null
+	if (passwd1.equals(passwd2)) {
+		String hobby[] = request.getParameterValues("hobby");
+		String texthobby = "";//null
 
-	for (int i = 0; i < hobby.length; i++) {
-		texthobby += hobby[i] + " ";
-	}
-	mDto.setHobby(texthobby);
+		for (int i = 0; i < hobby.length; i++) {
+			texthobby += hobby[i] + " ";
+		}
+		mDto.setHobby(texthobby);
 
-	Timestamp reg_date = new Timestamp(System.currentTimeMillis());
-	mDto.setReg_date(reg_date);
+		Timestamp reg_date = new Timestamp(System.currentTimeMillis());
+		mDto.setReg_date(reg_date);
 
-	//데이터베이스에 접근하는 객체 생성 작업
-	memberDAO mdao = new memberDAO();
-	mdao.insertMember(mDto);
-	
+		//데이터베이스에 접근하는 객체 생성 작업
+		memberDAO mdao = new memberDAO();
+		mdao.insertMember(mDto);
+	%>
+	<script type="text/javascript">
+		alert("패스워드 확인 되었습니다!!")
+	</script>
+	<%
 	//data list
 	response.sendRedirect("memberList.jsp");
-	
+
+	} else {
 	%>
+	<script type="text/javascript">
+		alert("패스워드가 틀렸습니다. 확인해주십시오!!");
+		history.back();//이전 페이지로 변경(전송)
+		//history.go(-1);
+	</script>
+	<%
+	}
+	%>
+
 	<h2>setter 메모리에 저장된 결과</h2>
 	<table border="1" style="text-align: center;">
 		<tr>
@@ -94,8 +110,8 @@
 	</table>
 	<script type="text/javascript">
 		function returnJoinForm() {
-			window.location.href='memberJoinForm.jsp';
-		}		
+			window.location.href = 'memberJoinForm.jsp';
+		}
 	</script>
 
 </body>

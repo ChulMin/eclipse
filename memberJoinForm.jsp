@@ -11,6 +11,7 @@
 		<header>
 			<h2>회원가입 페이지</h2>
 		</header>
+		
 		<form method="post" action="memberJoinPro.jsp">
 			<table border="1" width="750" align="center"
 				style="background-color: #abcdef;">
@@ -82,6 +83,7 @@
 					<td colspan="2">
 					<input type="submit" value="회원가입">&nbsp;&nbsp;
 					 <input type="reset" value="가입취소">
+					 <button type="button" onclick="location.href='memberList.jsp'">회원목록</button>
 					 </td>
 				</tr>
 			</table>
