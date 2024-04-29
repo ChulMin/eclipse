@@ -12,11 +12,11 @@ let varB = function () {
 };
 
 varB();
-// let varD = function () {
-//   varA();
-//   console.log("funcA = "+varA());
+ let varD = function () {
+   varA();
+  console.log("funcA = "+varA());
   
-// };
+ };
 let varE = varD || varA;
 console.log("-----------------");
 varE();
