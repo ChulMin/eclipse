@@ -1,32 +1,47 @@
-// 1. 묵시적 형 변환
-// -> 자바스크립트 엔진이 알아서 형 변환 하는것
+// 1. 배열 순회
+let arr = [1, 2, 3];
 
-let num = 10;
-let str = "20";
+// 1.1 배열 인덱스
+for (let i = 0; i < arr.length; i++) {
+  //   console.log(arr[i]);
+}
 
-const result = num + str;
-console.log(result);
+let arr2 = [4, 5, 6, 7, 8];
+for (let i = 0; i < arr2.length; i++) {
+  //   console.log(arr2[i]);
+}
 
-// 2. 명시적 형 변환
-// -> 프로그래머 내장함수 등을 이용해서 직접 형 변환을 명시
-// -> 문자열 -> 숫자
-let str1 = "10";
-let strToNum1 = Number(str1);
-console.log(strToNum1+1000);
+// 1.2 for of 반복문
+for (let item of arr) {
+  //   console.log(item);
+}
 
-let str2 = "10개";
-let strToNum2 = parseInt(str2);
-console.log(strToNum2+2000);
+// 2. 객체 순회
+let person = {
+  name: "이정환",
+  age: 27,
+  hobby: "테니스",
+};
 
-let str3 = "숫자10";
-let strToNum3 = parseInt(str3);
-console.log(strToNum3+2000);//NAN
+// 2.1 Object.keys 사용
+// -> 객체에서 key 값들만 뽑아서 새로운 배열로 반환
+let keys = Object.keys(person);
 
-let str4 = "10숫자10";
-let strToNum4 = parseInt(str3);
-console.log(strToNum4+3000);//3010
-// -> 숫자 -> 문자열
-let num1 = 20;
-let numToStr1 = String(num1);
+for (let key of keys) {
+  const value = person[key];
+  //   console.log(key, value);
+}
 
-console.log(numToStr1 + "입니다");
+// 2.2 Object.values
+// -> 객체에서 value 값들만 뽑아서 새로운 배열로 반환
+let values = Object.values(person);
+
+for (let value of values) {
+  //   console.log(value);
+}
+
+// 2.3 for in
+for (let key in person) {
+  const value = person[key];
+  console.log(key, value);
+}

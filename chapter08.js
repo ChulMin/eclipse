@@ -1,66 +1,63 @@
-// 1. null 병합 연산자
-// -> 존재하는 값을 추려내는 기능
-// -> null, undefined가 아닌 값을 찾아내는 연산자
-//null은
-console.log("null & undefined-------");
-// undefined는 의도적으로 변수에  값이 할당된 적이 없다는 뜻입니다.
-let var1;
-console.log(var1);
+// 5가지 요소 순회 및 탐색 메서드
+// 1. forEach
+// 모든 요소를 순회하면서, 각각의 요소에 특정 동작을 수행시키는 메서드
+let arr1 = [1, 2, 3];
 
-// null은 의도적으로 변수에 값이 없다는 것을 명시할 때 사용합니다.
-let var1_1 = null;
-console.log(var1_1);
+arr1.forEach(function (item, idx, arr) {
+  //   console.log(idx, item * 2);
+});
 
-console.log("-------");
-let var2 = 100;
-let var3 = 200;
+let doubledArr = [];
 
-let var4 = var1 ?? var2;
-console.log(var4);
-let var5 = var1 ?? var3;
-console.log(var5);
+arr1.forEach((item) => {
+  doubledArr.push(item * 2);
+});
 
-//자료형이 첫번째 같다면 첫번째 인자 값을 넣는다.
-console.log("-------");
-let var6 = var2 ?? var3;
-console.log(var6);
-console.log("-------");
-    var6 = var3 ?? var2;
-console.log(var6);
-console.log("-------");
+// 2. includes
+// 배열에 특정 요소가 있는지 확인하는 그런 메서드
+let arr2 = [1, 2, 3];
+let isInclude = arr2.includes(10);
 
-let userName;
-let userNickName = "Winterlood";
-console.log(userNickName);
-let displayName = userName ?? userNickName;
-console.log(displayName);
-console.log("-------");
+// 3. indexOf
+// 특정 요소의 인덱스(위치)를 찾아서 반환하는 메서드
+let arr3 = [2, 2, 2];
+let index = arr3.indexOf(20);
 
-// 2. typeof 연산자
-// -> 값의 타입을 문자열로 반환하는 기능을 하는 연산자
-console.log("typeof-----");
-let var7 = 1;
-console.log(var7);
-console.log(typeof(var7));
-console.log("-----");
-var7 = "hello";
-console.log(var7);
-console.log(typeof(var7));
-console.log("-----");
-var7 = true;
-console.log(var7);
-console.log(typeof(var7));
-console.log("-----");
-let t1 = typeof var7;
-console.log(t1);
+// let objectArr = [
+//   { name: "이정환" },
+//   { name: "홍길동" },
+// ];
 
-// 3. 삼항 연산자
-// -> 항을 3개 사용하는 연산자
-// -> 조건식을 이용해서 참, 거짓일 때의 값을 다르게 반환
-let var8 = 10;
+// console.log(
+//   objectArr.indexOf({ name: "이정환" })
+// );
 
+// console.log(
+//   objectArr.findIndex(
+//     (item) => item.name === "이정환"
+//   )
+// );
 
+// 4. findIndex
+// 모든 요소를 순회하면서, 콜백함수를 만족하는 그런
+// 특정 요소의 인덱스(위치)를 반환하는 메서드
+let arr4 = [1, 2, 3];
+const findedIndex = arr4.findIndex(
+  (item) => item === 999
+);
 
-// 요구사항 : 변수 res에 var8의 값이 짝수 -> "짝", 홀수 -> "홀"
-let res = var8 % 2 === 0 ? "짝수" : "홀수";
-console.log(res);
+console.log(findedIndex);
+
+// 5. find
+// 모든 요소를 순회하면서 콜백함수를 만족하는 요소를 찾는데, 요소를 그대로 반환
+
+let arr5 = [
+  { name: "이정환" },
+  { name: "홍길동" },
+];
+
+const finded = arr5.find(
+  (item) => item.name === "이정환"
+);
+
+console.log(finded);

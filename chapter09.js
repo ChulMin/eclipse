@@ -1,54 +1,49 @@
-// 1. if 조건문 (if문)
-let num = 4;
+// 5가지 배열 변형 메서드
+// 1. filter
+// 기존 배열에서 조건을 만족하는 요소들만 필터링하여 새로운 배열로 반환
 
-if (num >= 10) {
-  //   console.log("num은 10 이상입니다");
-  //   console.log("조건이 참 입니다!");
-} else if (num >= 5) {
-  //   console.log("num은 5 이상입니다");
-} else if (num >= 3) {
-  //   console.log("num은 3 이상입니다");
-} else {
-  //   console.log("조건이 거짓입니다!");
-}
+let arr1 = [
+  { name: "이정환", hobby: "테니스" },
+  { name: "김효빈", hobby: "테니스" },
+  { name: "홍길동", hobby: "독서" },
+];
 
-// 1~100사이의 합계를 구하여 출력하세요.
+const tennisPeople = arr1.filter(
+  (item) => item.hobby === "테니스"
+);
 
-let sum = 0;
-for(let i =1;i<100;i++){
-sum += i;
-}
-console.log(sum);
+// 2. map
+// 배열의 모든 요소를 순회하면서, 각각 콜백함수를 실행하고 그 결과값들을 모아서 새로운 배열로 반환
+let arr2 = [1, 2, 3];
+const mapResult1 = arr2.map((item, idx, arr) => {
+  return item * 2;
+});
 
+let names = arr1.map((item) => item.name);
 
-// 2. Switch 문
-// -> if문과 기능 자체는 동일
-// -> 다수의 조건을 처리할 때 if보다 더 직관적이다.
-
-let animal = "";
-
-switch (animal) {
-  case "cat": {
-    console.log("고양이");
-    break;
+// 3. sort
+// 배열을 사전순으로 정렬하는 메서드
+let arr3 = [10, 3, 5];
+arr3.sort((a, b) => {
+  if (a > b) {
+    // a가 b 앞에 와라
+    return -1;
+  } else if (a < b) {
+    // b가 a 앞에 와라
+    return 1;
+  } else {
+    // 두 값의 자리를 바꾸지 마라
+    return 0;
   }
-  case "dog": {
-    console.log("강아지");
-    break;
-  }
-  case "bear": {
-    console.log("곰");
-    break;
-  }
-  case "snake": {
-    console.log("뱀");
-    break;
-  }
-  case "tiger": {
-    console.log("호랑이");
-    break;
-  }
-  default: {
-    console.log("그런 동물은 전 모릅니다");
-  }
-}
+});
+
+// 4. toSorted (가장 최근에 추가된 최신 함수)
+// 정렬된 새로운 배열을 반환하는 메서드
+let arr5 = ["c", "a", "b"];
+const sorted = arr5.toSorted();
+
+// 5. join
+// 배열의 모든 요소를 하나의 문자열로 합쳐서 반환하는 그런 메서드
+let arr6 = ["hi", "im", "winterlood"];
+const joined = arr6.join(" ");
+console.log(joined);
