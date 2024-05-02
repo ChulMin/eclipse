@@ -1,41 +1,53 @@
-// 1. 콜백함수
-//함수를 사용할 때, 반복적인 코드 부분이 존재하는데,
-//이를 중복된 코드로 보고, 이를 방지 하기 위해서 사용합니다.
+function add10(num) {
+  const promise = new Promise((resolve, reject) => {
+    // 비동기 작업 실행하는 함수
+    // executor
 
-function main(value) {
-  value();
-};
+    setTimeout(() => {
+      if (typeof num === "number") {
+        resolve(num + 10);
+      } else {
+        reject("num이 숫자가 아닙니다");
+      }
+    }, 2000);
+    
+  });
 
-main(() => {
-     console.log("i am sub");
-});
-function main2(value) {
-  console.log(value);
-};
-main2(1000);
+  return promise;
+}
 
-function sub(value){
-  console.log("i am sub");
-};
-main2(sub);
+add10(0)
+  .then((result) => {
+    console.log(result+1);
+    return add10(result+2);
+  })
+  .then((result) => {
+    console.log(result+3);
+    return add10(undefined);
+  })
+  .then((result) => {
+    // 두번째 then에서 return add10(undefined); 
+    //=> add10에 undefined를 넣어서 10번 라인의 reject("num이 숫자가 아닙니다.");가 전달되어 27~33번 안으로 들어가지 않고
+    //34번 라인 .catch((error))안으로 들어가서 실행합니다.
+    console.log(result+"입니다.");
+    return add10(0);
+  })
+  .catch((error) => {
+    alert("실패");
+    console.log(error+"~~~~~~~");
+  });
 
-// 8, 13, 18,23
+  add10(100)
+  .then((result) => {
+    console.log(result);
 
-// 2. 콜백함수의 활용
-function repeat(count, callback) {
-  for (let idx = 1; idx <= count; idx++) {
-    callback(idx);
-  }
-};
-
-repeat(5, (idx) => {
-  console.log(idx);
-});
-
-repeat(5, (idx) => {
-  console.log(idx * 2);
-});
-
-repeat(5, (idx) => {
-  console.log(idx * 3);
-});
+  })
+  const p  = add10(1500);
+    p.then((result) =>{
+      console.log(result);
+    })
+    const p2  = add10(2500);
+    p2.then((result) =>{
+      console.log(result);
+    })
+    

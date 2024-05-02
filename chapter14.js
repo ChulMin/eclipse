@@ -1,45 +1,25 @@
-// 스코프
-// -> 전역(전체 영역) 스코프 / 지역(특정 영역) 스코프
-// -> 전역 스코프 : 전체 영역에서 접근 가능
-// -> 지역 스코프 : 특정 영역에서만 접근 가능
+// async
+// 어떤 함수를 비동기 함수로 만들어주는 키워드
+// 함수가 프로미스를 반환하도록 변환해주는 그런 키워드
 
-let a = 1000; // 전역 스코프
-
-function funcA() {
-  let b = 2; // 지역 스코프
-  console.log(a);
-  console.log(b);
+async function getData() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve({
+        name: "이정환",
+        id: "winterlood",
+      });
+    }, 1500);
+  });
 }
 
-funcA();
-function funcB() {
-  let b = 200;
-  console.log(a);
-  console.log(b);
+// await
+// async 함수 내부에서만 사용이 가능 한 키워드
+// 비동기 함수가 다 처리되기를 기다리는 역할
+
+async function printData() {
+  const data = await getData();
+  console.log(data);
 }
 
-function funcC() {
-
-}
-funcC();
-
-// if statement
-
-if (true) {
-  let c = 1; // local scope
-}
-
-for (let i = 0; i < 10; i++) {
-  let d = 1; //local scope
-}
-// console.log(d);// error
-// console.log(i);// error
-
-// 1000 + 5000 = 6000
-function funcD(value){
- sum = value + 5000;// 변수 sum = 전역 스코프
- console.log(sum);// 6000
-}
-
- funcD(1000);
- console.log(typeof(sum));
+printData();
